@@ -72,16 +72,16 @@ public class leafTaps {
   	    driver.findElement(By.id("createLeadForm_generalAttnName")).sendKeys("vrishu");
   	    driver.findElement(By.id("createLeadForm_generalAddress1")).sendKeys("tpt");
   	    driver.findElement(By.id("createLeadForm_generalAddress2")).sendKeys("ctr");
-  	    driver.findElement(By.id("createLeadForm_generalCity")).sendKeys("ctr");
-  	   driver.findElement(By.id("createLeadForm_generalPostalCode")).sendKeys("ctr");
-  	  driver.findElement(By.id("createLeadForm_generalAddress2")).sendKeys("ctr");
+  	    driver.findElement(By.id("createLeadForm_generalCity")).sendKeys("andhra");
+  	   driver.findElement(By.id("createLeadForm_generalPostalCode")).sendKeys("632001");
+  	  driver.findElement(By.id("createLeadForm_generalAddress2")).sendKeys("vellore");
 	    driver.findElement(By.id("createLeadForm_generalPostalCodeExt")).sendKeys("64543");
-	    WebElement State =driver.findElement(By.id("createLeadFidorm_ownershipEnumIdcreateLeadForm_generalStateProvinceGeoId"));
+	    WebElement State =driver.findElement(By.id("createLeadForm_generalStateProvinceGeoId"));
 		Select dd5= new Select( State);
 		dd5.selectByVisibleText("Arizona");
-  	    WebElement Country =driver.findElement(By.id("createLeadFidorm_ownershipEnumIdcreateLeadForm_generalcountryProvinceGeoId"));
+  	    WebElement Country =driver.findElement(By.id("createLeadForm_generalCountryGeoId"));
 		Select dd6= new Select( Country);
-		dd6.selectByVisibleText("Arizona");
+		dd6.selectByVisibleText("Afghanistan");
   	    
   		driver.findElement(By.name("submitButton")).click();
   		// Close the BRowser

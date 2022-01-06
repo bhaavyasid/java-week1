@@ -10,7 +10,7 @@ public class dropDown {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		WebDriverManager.chromedriver().setup();
+		WebDriverManager.firefoxdriver().setup();
 		ChromeDriver driver= new ChromeDriver();
 		driver.get("http://www.leafground.com/pages/Dropdown.html");
 		driver.manage().window().maximize();
@@ -19,3 +19,21 @@ public class dropDown {
 	}
 	//*[@id="username"]
 }
+ from Mohan (TestLeaf) to everyone:    8:18 PM
+ WebDriverManager.chromedriver().setup();
+    ChromeDriver driver =new ChromeDriver();
+    driver.get("http://leaftaps.com/opentaps/control/main");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    
+    //id,class,name,linktext,xpath,css value    
+    
+    
+    WebElement Username = driver.findElement(By.xpath("//input[@id='username']"));
+    Username.sendKeys("demosalesManager");
+    
+    String Value = Username.getAttribute("attribute name");
+    System.out.println(Value);
+    Username.clear();
+    Username.sendKeys(Value);
+     
