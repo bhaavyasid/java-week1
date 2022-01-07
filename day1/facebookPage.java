@@ -42,7 +42,7 @@ public class facebookPage {
 			dd2.selectByVisibleText("1994");
 			driver.findElement(By.xpath("//input[@name='Female']"));
 			 
-			driver.findElement(By.name("submitButton")).click();      
+			driver.findElement(By.name("websubmit")).click();      
 	}
 
 }

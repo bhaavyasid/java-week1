@@ -13,7 +13,11 @@ public class ButtonPage4 {
 		ChromeDriver driver= new ChromeDriver();
 		driver.get("http://leafground.com/pages/Button.html");
 		driver.manage().window().maximize();
+		 System.out.println(driver.findElement(By.id("home")).getAttribute("Go to Home Page"));
 		 System.out.println(driver.findElement(By.id("color")).getCssValue("background-color"));
+		 System.out.println(driver.findElement(By.id("position")).getLocation());
+		 System.out.println(driver.findElement(By.id("position")).getSize());
+   
 	}
 
 }

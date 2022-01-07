@@ -10,7 +10,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class createContact {
 
 		public static void main(String[] args) {
-			// TODO Auto-generated method stub
+			
+			
 			WebDriverManager.chromedriver().setup();
 			ChromeDriver driver= new ChromeDriver();
 			 driver.get("http://leaftaps.com/opentaps/control/login");
@@ -28,24 +29,22 @@ public class createContact {
 	          driver.findElement(By.id("createContactForm_firstNameLocal")).sendKeys("sid");
 	          driver.findElement(By.id("createContactForm_lastNameLocal")).sendKeys("sree");
 	          driver.findElement(By.id("createContactForm_departmentName")).sendKeys("IT");
-	          driver.findElement(By.id("createContactForm_description")).sendKeys("some discription");
-	          driver.findElement(By.id("createContactForm_primaryEmail")).sendKeys("bhavyashree2894@gmail.com");
+	          
+	          driver.findElement(By.id("createContactForm_description")).sendKeys("bhavyashree");
+	          driver.findElement(By.id("createContactForm_primaryEmail")).sendKeys("bhavyashree@gmail.com");
 	          WebElement state = driver.findElement(By.id("createContactForm_generalStateProvinceGeoId"));
 	  		   Select dd = new Select(state);
 	  		  dd.selectByVisibleText("New York");
-	  		  
+	  		driver.findElement(By.name("submitButton")).click();
+	  		driver.findElement(By.xpath("//a[text()='Edit']")).click();
+	  		  driver.findElement(By.id("updateContactForm_description")).clear();
 	  		
-	  		driver.findElement(By.xpath("//input[@name='submitButton']")).click();
-	  		
-	  		driver.findElement(By.xpath("//a[text()='Edit']"));
-	  		
-	  		 //String Value = Description.getAttribute("attribute name");
-	  	   // System.out.println(Value);
-	  	   // Description.clear();
-	  	    //Description.sendKeys(Value);
+	  
 	  		driver.findElement(By.id("updateContactForm_importantNote")).sendKeys("new files added");
 	  		
-	  		// Close the BRowser
+	  		driver.findElement(By.name("submitButton")).click();
+	  		
+	  		// Close the BRowser createContactForm_description
 	  		//
 	  		driver.close();
 	  		        

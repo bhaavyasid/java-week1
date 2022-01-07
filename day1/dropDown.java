@@ -17,9 +17,9 @@ public class dropDown {
 		   WebElement username = driver.findElement(By.id("Dropdown1"));
 		   select Dropdown1= new select(dd);
 	}
-	//*[@id="username"]
+	
 }
- from Mohan (TestLeaf) to everyone:    8:18 PM
+ //*from Mohan (TestLeaf) to everyone:    8:18 PM
  WebDriverManager.chromedriver().setup();
     ChromeDriver driver =new ChromeDriver();
     driver.get("http://leaftaps.com/opentaps/control/main");
@@ -35,5 +35,5 @@ public class dropDown {
     String Value = Username.getAttribute("attribute name");
     System.out.println(Value);
     Username.clear();
-    Username.sendKeys(Value);
+    Username.sendKeys(Value);*//
      
