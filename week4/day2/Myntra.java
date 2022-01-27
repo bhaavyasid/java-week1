@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.Alert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
@@ -66,39 +66,27 @@ public class Myntra {
 		List<String> window1 = new ArrayList<String>(windowHandles);
 		driver.switchTo().window(window1.get(0));
 //8) Type Duke and click checkbox
-		driver.findElement(By.xpath("//div[@class='FilterDirectory-titleBar']//input[1]")).sendKeys("Duke");
-		driver.findElement(By.xpath("//ul[@class='FilterDirectory-list']/li[2]")).click();
-		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@placeholder='Search brand']")).sendKeys("Duke");
+		driver.findElement(By.xpath("//label[@class=' common-customCheckbox']")).click();
+		Thread.sleep(5000);
 //9) Close the pop-up x
 		
          driver.findElement(By.xpath("//span[@class='myntraweb-sprite FilterDirectory-close sprites-remove']")).click();
-       
-        
-         driver.switchTo().defaultContent();
+    driver.switchTo().defaultContent();
 		
 //10) Confirm all the Coats are of brand Duke
-        WebElement ele6 = driver.findElement(By.xpath("(//input[@value='Duke']/following::span)"));
-       String text4 = ele6.getText();
-    	String dd = text4.replaceAll("[^0-9]","");
-    	System.out.println(dd);
-      	int duke = Integer.parseInt(dd);
-    	
-    	List<WebElement> lt = new ArrayList<WebElement>();
-    	for (int i = 0; i < duke ; i++) {
-    		
-    		lt.add(ele6);
-    	}	
-    		
-    	int size = lt.size();
-    		
-    		if(size==duke) {
-    			
-    			System.out.println(" Duke is added to the list");
-    		}else {
-    			
-    			System.out.println("Contains other brands");
-    		}
-		   // Hint : use List 
+    List<WebElement> w = driver.findElements(By.xpath("//h3[@class='product-brand']"));
+	int size=w.size();
+	int count=0;
+	for (WebElement coat : w) {
+		if(coat.getText().contains("Duke"))
+			count++;
+		
+	}
+	if(size==count)
+		System.out.println("All coats are of brand Duke");
+	else
+		System.out.println("You have choosed wrong brand");
 //11) Sort by Better Discount
     		WebElement ele7 = driver.findElement(By.xpath("(//div[@class='horizontal-filters-sortContainer']//div)[3]"));
     		WebElement ele8=driver.findElement(By.xpath("(//ul[@class='sort-list']//label)[3]"));
